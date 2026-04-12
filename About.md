@@ -1,7 +1,7 @@
 # 👤 Founder
 
 ## About
-Gameseek is an independent project created and developed by a young solo developer (17).
+Gameseek is an independent project created and developed by a young solo developer (18).
 
 The goal is to build a modern and simple platform where gamers can connect, find teammates, and grow communities in an easy and intuitive way.
 

@@ -14,7 +14,7 @@ GameSeek
 
 ### Contact
 Email: [gameseekoffizel@gmail.com]  
-Website: (https://[gameseekapp.xyz])
+Website: https://[gameseekapp.xyz]
 
 ---
 

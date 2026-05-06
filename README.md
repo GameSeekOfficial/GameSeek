@@ -3,7 +3,7 @@
 > 🚀 **The next-generation communication platform for gamers**  
 > Fast. Lightweight. Built for performance — everything your squad needs.
 
-[![Website](https://img.shields.io/badge/Website-gameseekapp.xyz-blue?style=for-the-badge)](https://gameseekapp.com)
+[![Website](https://img.shields.io/badge/Website-gameseekapp.com-blue?style=for-the-badge)](https://gameseekapp.com)
 [![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20Web-green?style=for-the-badge)](https://github.com/GameSeekOfficial/GameSeek/releases)
 [![Status](https://img.shields.io/badge/Status-Active%20Development-orange?style=for-the-badge)](https://github.com/GameSeekOfficial/GameSeek/blob/main/Contributing.md)
 

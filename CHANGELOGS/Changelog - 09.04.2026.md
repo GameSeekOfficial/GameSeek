@@ -31,7 +31,7 @@
 > 💡 The app has been completely revamped to provide a better experience and improved overall quality.
 
 TikTok  : https://www.tiktok.com/@gameseekoffizel  
-Website : https://gameseekapp.xyz/  
+Website : https://gameseekapp.com 
 
 © 2026 GameSeek — All Rights Reserved
 

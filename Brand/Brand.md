@@ -72,6 +72,8 @@ Feel free to open issues or suggest improvements.
 This project is currently private / in development.
 License details will be added later.
 
+Website: [https://gameseekapp.com/brand](https://gameseekapp.com/brand/index.html)
+
 ---
 
 > Built with a focus on performance, design, and the future of communication.

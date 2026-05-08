@@ -1,4 +1,4 @@
-# Legal Notice (Imprint)
+# Legal Notice (Imprint).
 
 ## Information according to § 5 TMG
 

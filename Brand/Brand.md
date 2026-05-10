@@ -1,4 +1,4 @@
-# 🎮 GameSeek
+# 🎮 GameSeek.
 
 ![GameSeek Logo](G_Logo.png)
 

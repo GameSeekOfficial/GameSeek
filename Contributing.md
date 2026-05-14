@@ -16,19 +16,25 @@ All roles listed below are **completely voluntary** and can be joined freely.
 ## 🧑‍💻 Open Roles
 
 ### 🛠️ Developer
-Help building features, fixing bugs, or improving the platform.
+Help build features, fix bugs, and improve the platform.
 
 ### 🎨 Project Designer
-Work on UI/UX, layout ideas, and overall design of Gameseek.
+Work on UI/UX, layout concepts, and the overall design of Gameseek.
 
 ### 🧪 Beta Tester
 Test new versions before release and report bugs or issues.
 
 ### 📋 Project Support
-Help organize ideas, give feedback, and improve the project structure.
+Help organize ideas, provide feedback, and improve the project structure.
+
+### 🤝 Team Manager
+Lead the team, coordinate tasks, and help manage the project.
 
 ### 🧑‍🤝‍🧑 Community Support
 Help users, answer questions, and keep the community active.
+
+### 📷 Social Media Manager
+Create social media content, produce videos, and help grow the community.
 
 ---
 

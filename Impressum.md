@@ -13,7 +13,9 @@ Germany
 
 ## Contact
 Email: gameseekoffizel@gmail.com 
+
 Business Email: gameseek@gameseekapp.com
+
 Website: https://gameseekapp.com
 
 ---

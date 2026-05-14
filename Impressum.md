@@ -1,51 +1,59 @@
-# Legal Notice (Imprint)
+# ⚖️ Legal Notice — Impressum
 
-## Information according to § 5 TMG
+> *Information according to § 5 TMG*
 
-### Operator
-GameSeek  
+-----
+
+## 🏢 Operator
+
+**GameSeek**  
 c/o Online-Impressum #7691  
 Europaring 90  
 53757 St. Augustin  
-Germany  
+Germany
 
----
+-----
 
-## Contact
-Email: gameseekoffizel@gmail.com 
+## 📬 Contact
 
-Business Email: gameseek@gameseekapp.com
+|              |                                          |
+|--------------|------------------------------------------|
+|📧 **General** |gameseekoffizel@gmail.com                 |
+|💼 **Business**|gameseek@gameseekapp.com                  |
+|🌐 **Website** |[gameseekapp.com](https://gameseekapp.com)|
 
-Website: https://gameseekapp.com
+-----
 
----
+## 👤 Responsible for Content
 
-## Responsible for content according to § 55 (2) RStV
-Miriam Hempel  
+*according to § 55 (2) RStV*
+
+**Miriam Hempel**  
 c/o Online-Impressum #7691  
 Europaring 90  
 53757 St. Augustin  
-Germany  
+Germany
 
----
+-----
 
-## Liability for Content
-The contents of this website have been created with the greatest possible care. However, we cannot guarantee that the content is accurate, complete, or up to date.
+## 📄 Liability for Content
+
+The contents of this website have been created with the greatest possible care. However, we cannot guarantee that all content is accurate, complete, or up to date.
 
 In accordance with statutory provisions, we are responsible for our own content on these pages. We are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.
 
----
+-----
 
-## Liability for External Links
-This website contains links to external websites of third parties, over whose content we have no influence. Therefore, we cannot assume any liability for these external contents.
+## 🔗 Liability for External Links
 
-The respective provider or operator of the linked pages is always responsible for their content.
+This website may contain links to external third-party websites over whose content we have no influence. We therefore cannot accept any liability for such external content.
 
-At the time of linking, the linked pages were checked for possible legal violations. No illegal content was identifiable at that time.
+The respective provider or operator of a linked page is always responsible for its content. All linked pages were checked for possible legal violations at the time of linking — no illegal content was identifiable at that time.
 
----
+-----
 
-## Copyright
-All content and works created by the site operator on this website are subject to copyright law.
+## © Copyright
+
+All content and works created by the site operator on this website are subject to German copyright law.
 
 Any reproduction, editing, distribution, or any form of utilization beyond the scope of copyright law requires the prior written consent of the respective author or creator.

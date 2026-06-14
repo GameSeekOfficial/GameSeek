@@ -1,85 +1,114 @@
-🔐 GameSeek Security Architecture
+# 🔐 GameSeek Security Architecture
 
-Enterprise-Grade Multi-Layer Encryption System
+Enterprise-Grade Multi-Layer Cryptography System
 
-https://img.shields.io/badge/Security-AES--256--GCM%20%7C%20Argon2id%20%7C%20Fernet-brightgreen
+![Security](https://img.shields.io/badge/Security-AES--256--GCM%20%7C%20Argon2id%20%7C%20Fernet-brightgreen)
 
-📊 Overview
+---
 
-GameSeek implements a defense-in-depth encryption architecture with multiple independent security layers. This is not a single algorithm — it's a complete cryptographic fortress.
+## 📊 Overview
 
-🏗️ Encryption Layers
+GameSeek uses a layered security approach combining authentication hashing, message encryption, database encryption, and transport security.
 
-Layer 1: Password Hashing (Authentication)
+⚠️ Note: The system uses multiple cryptographic layers. Security depends heavily on correct key management and separation of concerns.
 
-Algorithm Parameters Purpose
-Argon2id (primary) Time: 3, Memory: 128MB, Parallelism: 4 Password storage
-bcrypt (fallback) Rounds: 12 Legacy support
-PBKDF2-SHA256 (last resort) Iterations: 600,000 Emergency fallback
+---
 
-Layer 2: End-to-End Message Encryption
+## 🏗️ Encryption Layers
 
-· Fernet (AES-128-CBC) with HMAC authentication
-· PBKDF2-SHA256 key derivation (100,000 iterations)
-· Per-user unique keys derived from user_id + password
+### 🔹 Layer 1: Password Hashing (Authentication)
 
-Layer 3: AES-256-GCM Ultimate Security Layer
+| Algorithm | Parameters | Purpose |
+|----------|------------|--------|
+| Argon2id (primary) | time_cost=3, memory=128MB, parallelism=4 | Secure password storage |
+| bcrypt (fallback) | rounds=12 | Legacy compatibility |
+| PBKDF2-SHA256 (last resort) | 600,000 iterations | Emergency fallback |
 
-· 256-bit AES key (cryptographically random)
-· 12-byte nonce (unique per encryption operation)
-· Authenticated Encryption with Associated Data (AEAD)
-· Built-in authentication tag prevents tampering
+---
 
-Layer 4: Database Encryption
+### 🔹 Layer 2: End-to-End Message Encryption (E2EE)
 
-· Fernet (AES-128-CBC) for sensitive fields at rest
-· Transparent encryption/decryption on read/write
+- Fernet (AES-128-CBC + HMAC-SHA256)
+- PBKDF2-SHA256 key derivation (100,000 iterations)
+- Per-user encryption keys derived from `user_id + password`
 
-Layer 5: Transport Security
+⚠️ Important: If the server can derive the key, this is not strict zero-knowledge E2EE.
 
-· TLS 1.2/1.3 with valid certificate (HTTPS/WSS)
-· Automatic SSL fallback handling
-· Secure WebSocket (WSS) support
+---
 
-🔑 Key Management
+### 🔹 Layer 3: AES-256-GCM Encryption Layer
 
-Key Type Generation Storage Rotation
-AES-256 Master Key secrets.token_bytes(32) Memory-only On each server restart
-Fernet DB Key secrets.token_urlsafe(32) Environment variable Manual
-JWT Secret 32-byte hex Encrypted file Configurable
-User E2E Keys Derived from password Never stored On password change
+- AES-256-GCM (AEAD mode)
+- 256-bit cryptographic key (randomly generated via `secrets`)
+- 12-byte nonce (unique per encryption operation)
+- Authentication tag prevents tampering
 
-🛡️ Security Features
+---
 
-Protection Against
+### 🔹 Layer 4: Database Encryption (At Rest)
 
-· ✅ Brute force attacks — Argon2id memory-hard function
-· ✅ Rainbow tables — Unique salts per password
-· ✅ Message tampering — AEAD with GCM authentication tags
-· ✅ Replay attacks — Unique nonces per encryption
-· ✅ MITM attacks — TLS certificate validation
-· ✅ Database leaks — Field-level encryption at rest
+- Fernet encryption for sensitive database fields
+- Encrypt/decrypt performed on read/write operations
 
-Additional Safeguards
+---
 
-· Rate limiting per IP (5 attempts → 30 min ban)
-· Token blacklisting system
-· Session invalidation on logout
-· Automatic cleanup of expired tokens
-· IP blacklisting capability
+### 🔹 Layer 5: Transport Security
 
-📈 Security Metrics
+- TLS 1.2 / TLS 1.3 (HTTPS / WSS)
+- Certificate-based encrypted communication
+- Secure WebSocket support (WSS)
 
-Metric Value
-Password hash iterations (Argon2id) 3 rounds
-Memory cost (Argon2id) 128 MB
-Parallelism (Argon2id) 4 threads
-PBKDF2 iterations 600,000
-AES key length 256 bits
-Nonce length 96 bits (GCM)
-Salt length 128 bits
+---
 
-🔄 Data Flow
+## 🔑 Key Management Model
+
+| Key Type | Generation | Storage | Rotation |
+|----------|-----------|---------|----------|
+| AES-256 Master Key | `secrets.token_bytes(32)` | Memory only | Server restart |
+| DB Fernet Key | `secrets.token_urlsafe(32)` | Environment variable | Manual |
+| JWT Secret | 32-byte random key | Config / encrypted storage | Configurable |
+| E2E User Keys | Derived from password | Never stored | On password change |
+
+---
+
+## 🛡️ Security Features
+
+### Protection Against
+
+- ✅ Brute-force attacks → Argon2id (memory-hard hashing)
+- ✅ Rainbow table attacks → Unique salts per password
+- ✅ Message tampering → AES-GCM authentication tags
+- ✅ Replay attacks → Unique nonces per encryption
+- ✅ MITM attacks → TLS certificate validation
+- ✅ Database leaks → Field-level encryption
+
+---
+
+### Additional Safeguards
+
+- Rate limiting per IP (e.g. 5 attempts → temporary ban)
+- Token blacklisting system
+- Session invalidation on logout
+- Expired token cleanup
+- Optional IP blocking system
+
+---
+
+## 📈 Security Metrics
+
+| Metric | Value |
+|--------|------|
+| Argon2id time cost | 3 |
+| Argon2id memory cost | 128 MB |
+| Argon2id parallelism | 4 threads |
+| PBKDF2 iterations | 600,000 |
+| AES key length | 256 bits |
+| GCM nonce length | 96 bits (12 bytes) |
+| Salt length | 128 bits (16 bytes) |
+
+---
+
+## 🔄 Data Flow
 
 ```
 User Message
@@ -93,32 +122,37 @@ User Message
 [TLS Transport] → Secure delivery
 ```
 
-🚀 Performance Impact
+---
 
-Operation Overhead
-Password verification (Argon2id) ~50-100ms
-Message encrypt/decrypt <5ms
-Database encrypt/decrypt <2ms
-TLS handshake ~100ms (once per session)
+## 🚀 Performance Impact (Typical)
 
-🔐 Compliance
-
-This architecture meets or exceeds requirements for:
-
-· GDPR — Data protection by design
-· ISO 27001 — Cryptographic controls
-· OWASP — Secure communication standards
-
-⚠️ Important Notes
-
-The AES-256-GCM master key is generated at runtime and never persisted. This means encrypted data from a previous server instance cannot be decrypted after restart — this is by design for maximum security of transient data.
+| Operation | Overhead |
+|-----------|----------|
+| Password verification (Argon2id) | ~50–100ms |
+| Message encryption/decryption | <5ms |
+| Database encryption | <2ms |
+| TLS handshake | ~100ms (initial connection) |
 
 ---
 
-📜 License
+## 🔐 Security Compliance Targets
+
+- GDPR (data protection by design)
+- ISO 27001 alignment (cryptographic controls)
+- OWASP secure communication practices
+
+---
+
+## ⚠️ Important Notes
+
+- AES-256-GCM master key is generated at runtime and not persisted.
+- This means previously encrypted data may become undecryptable after server restart (depending on design).
+- True E2EE requires client-side key ownership to avoid server-side key exposure.
+
+---
+
+## 📜 License
 
 Proprietary — All rights reserved
 
----
-
-Built with 🔒 for GameSeek — Where security meets communication
+Built for GameSeek — secure communication system design

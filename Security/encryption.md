@@ -84,13 +84,15 @@ The system is designed to protect against:
 ```
 User Message
     ↓
-[E2E Fernet Encryption] → Per-user key
+[Encryption Layer]
     ↓
-[AES-256-GCM] → Master key + unique nonce
+[Secure Storage Layer]
     ↓
-[Database Fernet] → Field-level storage encryption
+[Protected Database]
     ↓
-[TLS Transport] → Secure delivery
+[TLS Secure Transport]
+    ↓
+Secure Delivery
 ```
 
 ---

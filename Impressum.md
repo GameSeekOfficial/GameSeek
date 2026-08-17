@@ -1,4 +1,4 @@
-# ⚖️ Legal Notice — Impressum
+# ⚖️ Legal Notice — Impressum.
 
 > *Information according to § 5 TMG*
 

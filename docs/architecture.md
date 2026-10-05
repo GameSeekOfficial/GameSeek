@@ -1,95 +1,95 @@
-# 🏗️ Architecture Overview
+# Architecture
 
-GameSeek is a full-stack real-time communication platform with a desktop app, web app, and a Python backend.
+GameSeek is a realtime communication platform with three runtime pieces: a Windows app, a web app, and a Python backend.
 
------
+This repository documents the project. It does not contain the application source.
 
-## Tech Stack
+## Tech stack
 
-|Layer        |Technology        |
-|-------------|------------------|
-|Desktop App  |Electron          |
-|Frontend     |React + TypeScript|
-|Backend      |Python (asyncio)  |
-|Real-time    |WebSockets        |
-|Voice / Video|WebRTC            |
-|Database     |SQLite            |
-|Server       |Debian Server     |
-|Reverse Proxy|Nginx             |
-|Email        |SendGrid          |
+| Layer | Technology |
+| --- | --- |
+| Desktop app | Electron |
+| Frontend | React and TypeScript |
+| Backend | Python (asyncio) |
+| Realtime messaging | WebSockets |
+| Voice and video | WebRTC |
+| Database | SQLite |
+| Server | Debian |
+| Reverse proxy | Nginx |
+| Email | SendGrid |
 
------
+## Shape of the system
 
-## High-Level Architecture
-
-```
-┌─────────────────────────────────────┐
-│           Client (Frontend)         │
-│                                     │
-│  ┌──────────────┐  ┌─────────────┐  │
-│  │  Electron    │  │  Browser    │  │
-│  │  (EXE)       │  │  (Web App)  │  │
-│  └──────┬───────┘  └──────┬──────┘  │
-│         │                 │         │
-│    ws://:8765        wss://         │
-│         │           /ws (Nginx)     │
-└─────────┼───────────────┬───────────┘
-          │               │
-          ▼               ▼
-┌─────────────────────────────────────┐
-│         Python Backend              │
-│                                     │
-│  WebSocket Server  │  HTTP Server   │
-│  (port 8765)       │  (port 8080)   │
-│                                     │
-│         SQLite Database             │
-└─────────────────────────────────────┘
+```text
+Client
+├── Electron app ── ws://host:8765 ──────────────┐
+└── Browser ────── wss://host/ws (Nginx) ────────┤
+                                                 ▼
+                                    Python backend
+                                    ├── WebSocket server :8765
+                                    ├── HTTP server      :8080
+                                    └── SQLite
 ```
 
------
+## Decisions that matter
 
-## Key Design Decisions
+### Electron and the browser
 
-### Electron vs Browser Detection
-
-The frontend detects its environment at runtime:
+The frontend checks its environment at startup:
 
 ```typescript
 const isElectron = !!(window as any).require;
 ```
 
-This controls which WebSocket URL is used and enables platform-specific features like native Windows notifications.
+That flag selects the WebSocket URL and turns on platform features such as native Windows notifications.
 
-### WebRTC Voice & Screen Share
+### Voice and screen share
 
-- Peer-to-peer connections via WebRTC
-- The Python backend acts as a **signaling server** (no media relay)
-- Audio processing: noise suppression via browser APIs
-- Speaking detection via `setInterval` + `useRef` (prevents stream flicker)
+- Media is peer to peer over WebRTC.
+- The Python backend only signals the call. It does not relay audio or video.
+- Noise suppression uses browser APIs.
+- Speaking detection uses `setInterval` and `useRef`, which avoids a flickering audio stream.
 
-### Real-time Messaging
+### Messages
 
-- All chat messages, edits, and deletes are broadcast over WebSocket
-- Right-click context menus allow inline edit/delete with live broadcast
+Chat sends, edits, and deletes are broadcast on the WebSocket. A right-click menu edits or deletes a message in place, and every connected client sees the change.
 
-### Email & Support
+### Email and support
 
-- Support tickets use `GS-XXXXXXXX` format IDs
-- Email sent via SendGrid from `support@gameseekapp.xyz`
-- 6-digit email verification codes for register/login
+- Support ticket IDs look like `GS-XXXXXXXX`.
+- Mail is sent with SendGrid from `support@gameseekapp.xyz`.
+- Register and login use a 6-digit email code.
 
------
+The public website is [gameseekapp.com](https://gameseekapp.com). The host named in deployment and API docs is `gameseekapp.xyz`.
 
-## Folder Structure (planned)
+## Where the code is expected to live
 
+```text
+frontend/          Electron and React app
+└── src/
+    ├── components/
+    └── pages/
+backend/           Python WebSocket and HTTP server
 ```
-GameSeek/
-├── frontend/          # Electron + React app
-│   └── src/
-│       ├── components/
-│       └── pages/
-├── backend/           # Python WebSocket + HTTP server
-├── docs/              # This documentation
-├── CHANGELOGS/        # Version history
-└── README.md
+
+## Where the docs live
+
+```text
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+CODE_OF_CONDUCT.md
+SECURITY.md
+docs/
+├── getting-started.md
+├── features.md
+├── architecture.md
+├── api.md
+├── deployment.md
+├── security/
+└── legal/
+assets/screenshots/
+brand/
 ```
+
+Event and route names are listed in the [API reference](api.md).

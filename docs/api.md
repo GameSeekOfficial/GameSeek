@@ -1,63 +1,59 @@
-# 🔌 API Reference
+# API reference
 
-GameSeek uses a combination of **WebSocket** messages and **HTTP** endpoints.
+GameSeek clients talk to the backend with JSON WebSocket messages and a small set of HTTP routes.
 
------
+The production host used by these endpoints is `https://gameseekapp.xyz`. Local development uses `http://localhost:8080`. The public product site is [gameseekapp.com](https://gameseekapp.com).
 
-## WebSocket Events
+## WebSocket events
 
-All WebSocket messages are JSON objects with a `type` field.
+Every message is a JSON object with a `type` field.
 
-### Client → Server
+### Client to server
 
-|Type            |Description                     |
-|----------------|--------------------------------|
-|`send_message`  |Send a chat message             |
-|`edit_message`  |Edit an existing message        |
-|`delete_message`|Delete a message                |
-|`join_channel`  |Join a voice/text channel       |
-|`leave_channel` |Leave a channel                 |
-|`webrtc_offer`  |Send WebRTC offer (voice/screen)|
-|`webrtc_answer` |Send WebRTC answer              |
-|`webrtc_ice`    |Send ICE candidate              |
+| Type | Purpose |
+| --- | --- |
+| `send_message` | Send a chat message |
+| `edit_message` | Edit a message |
+| `delete_message` | Delete a message |
+| `join_channel` | Join a text or voice channel |
+| `leave_channel` | Leave a channel |
+| `webrtc_offer` | Send a WebRTC offer for voice or screen share |
+| `webrtc_answer` | Send a WebRTC answer |
+| `webrtc_ice` | Send an ICE candidate |
 
-### Server → Client
+### Server to client
 
-|Type             |Description               |
-|-----------------|--------------------------|
-|`message`        |New chat message broadcast|
-|`message_edited` |Edited message broadcast  |
-|`message_deleted`|Deleted message broadcast |
-|`user_joined`    |User joined channel       |
-|`user_left`      |User left channel         |
-|`webrtc_offer`   |Forwarded WebRTC offer    |
-|`webrtc_answer`  |Forwarded WebRTC answer   |
-|`webrtc_ice`     |Forwarded ICE candidate   |
+| Type | Purpose |
+| --- | --- |
+| `message` | Broadcast a new chat message |
+| `message_edited` | Broadcast an edit |
+| `message_deleted` | Broadcast a deletion |
+| `user_joined` | Someone joined the channel |
+| `user_left` | Someone left the channel |
+| `webrtc_offer` | Forwarded WebRTC offer |
+| `webrtc_answer` | Forwarded WebRTC answer |
+| `webrtc_ice` | Forwarded ICE candidate |
 
------
+Browsers connect at `wss://gameseekapp.xyz/ws`. The Electron app connects at `ws://gameseekapp.xyz:8765`. See [Deployment](deployment.md) for the proxy.
 
-## HTTP Endpoints
+## HTTP endpoints
 
-Base URL: `https://gameseekapp.xyz` (production) or `http://localhost:8080` (local)
+### Accounts
 
-### Auth
-
-|Method|Endpoint       |Description        |
-|------|---------------|-------------------|
-|`POST`|`/register`    |Register new user  |
-|`POST`|`/verify-email`|Verify 6-digit code|
-|`POST`|`/login`       |Login              |
-|`POST`|`/login-verify`|Verify login code  |
+| Method | Path | Purpose |
+| --- | --- | --- |
+| `POST` | `/register` | Register a user |
+| `POST` | `/verify-email` | Confirm a 6-digit code |
+| `POST` | `/login` | Start login |
+| `POST` | `/login-verify` | Confirm the login code |
 
 ### Support
 
-|Method|Endpoint  |Description          |
-|------|----------|---------------------|
-|`POST`|`/support`|Submit support ticket|
+| Method | Path | Purpose |
+| --- | --- | --- |
+| `POST` | `/support` | Submit a support ticket |
 
------
-
-## Support Ticket Format
+Example body:
 
 ```json
 {
@@ -69,4 +65,6 @@ Base URL: `https://gameseekapp.xyz` (production) or `http://localhost:8080` (loc
 }
 ```
 
-Ticket IDs are generated client-side in `GS-XXXXXXXX` format.
+The client generates `ticket_id` in the form `GS-XXXXXXXX`.
+
+How these calls fit the rest of the system is described in [Architecture](architecture.md).

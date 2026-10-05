@@ -1,78 +1,81 @@
-# ✨ Features
+# Features
 
-An overview of all major features in GameSeek.
+What GameSeek includes today. The screenshots show the desktop app. Labels in these captures are German. English localization is on the [roadmap](roadmap.md).
 
------
+## Messaging
 
-## 💬 Messaging
+- Real-time text chat over WebSocket
+- Edit and delete from the message context menu
+- Edits and deletes broadcast live to everyone in the channel
+- The view follows the latest message
 
-- Real-time text chat via WebSocket
-- Edit & delete messages (right-click context menu)
-- Live broadcast of edits/deletes to all connected users
-- Auto-scroll to latest message
+![Text channel, channel list, and member sidebar](../assets/screenshots/text-channel.png)
 
------
+## Voice and screen sharing
 
-## 🎤 Voice & Video
-
-- Voice channels with WebRTC peer-to-peer audio
-- Screen sharing with multi-stream grid layout
+- Voice channels with peer-to-peer WebRTC audio
 - Background noise suppression
-- Speaking indicator (no flicker)
-- WebRTC renegotiation for mid-session stream changes
+- A speaking indicator that does not flicker
+- Screen sharing, including more than one stream in a grid
+- Renegotiation when streams change mid-call
 
------
+| Voice | Screen share |
+| --- | --- |
+| ![Voice channel](../assets/screenshots/voice-channel.png) | ![Screen share inside a voice channel](../assets/screenshots/screen-share.png) |
 
-## 🖥️ Desktop App (Electron)
+## Friends and profiles
 
-- Native Windows desktop application
-- Windows push notifications via Electron IPC
-- Connects directly to backend via `ws://` (no proxy needed)
-- Auto-detects EXE vs browser environment
+- Friend requests, and lists for online, all, pending, and blocked
+- Display name, username, bio, pronouns, and profile picture
+- Status: online, idle, do not disturb, offline
 
------
+| Friends | Profile |
+| --- | --- |
+| ![Friends list](../assets/screenshots/friends.png) | ![User settings profile page](../assets/screenshots/user-settings.png) |
 
-## 🌐 Web App
+![Edit profile dialog](../assets/screenshots/edit-profile.png)
 
-- Full browser support
-- Connects via `wss://` through Nginx reverse proxy
-- Same feature parity as the desktop app
+## Servers
 
------
-
-## 🛠️ Server Management
-
-- Create and manage servers (like Discord guilds)
-- Channel management (create, edit, delete)
-- Role system with permissions
-- Member management
+- Create a server and choose a template
+- Text channels, voice channels, and categories
+- Roles and permissions
+- Member management, including ban and kick with a reason
 - Server security settings
-- Danger zone (delete server, transfer ownership)
+- Danger zone: delete the server or transfer ownership
+- A public server list for discovery
 
------
+| Create | Template |
+| --- | --- |
+| ![Create a server](../assets/screenshots/create-server.png) | ![Choose a server template](../assets/screenshots/server-template.png) |
 
-## 👤 Accounts & Auth
+![Server overview settings](../assets/screenshots/server-settings.png)
 
-- User registration with 6-digit email verification
-- Login with email verification code
+## Desktop and web
+
+| | Windows app | Web app |
+| --- | --- | --- |
+| Client | Electron | Browser |
+| Connection | Direct `ws://` to the backend | `wss://` through Nginx |
+| Notifications | Native Windows notifications | Browser notifications where supported |
+| Features | Same product surface as the web app | Same product surface as the desktop app |
+
+The client detects Electron at runtime and picks the matching connection.
+
+## Accounts
+
+- Registration with a 6-digit email code
+- Login with an email verification code
 - Profile management
+- Account switching
 
------
+## Support and admin
 
-## 🎫 Support System
+- Support tickets from the website, each with a `GS-XXXXXXXX` ID
+- Email delivery through SendGrid
+- Support pages in German and English
+- An admin dashboard for platform management and moderation
 
-- Support ticket submission from the website
-- Tickets assigned unique `GS-XXXXXXXX` IDs
-- Email delivery via SendGrid
-- Support page available in 🇩🇪 German and 🇬🇧 English
+## Where this is going
 
------
-
-## 📊 Admin Tools
-
-- Admin dashboard for platform management
-- User oversight and moderation tools
-
------
-
-> More features are actively being developed. See [CHANGELOGS](../CHANGELOGS/) for the latest updates.
+See the [roadmap](roadmap.md) and the [changelog](../CHANGELOG.md).

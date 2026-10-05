@@ -1,8 +1,10 @@
 # Getting started
 
-GameSeek is a place for gamers to talk, hop into voice, and share a screen. You can use it in the browser or as a Windows app. Both are available from [gameseekapp.com](https://gameseekapp.com).
+You can be in a server in about a minute.
 
-The app is in early access. Core chat, voice, and servers work today. Some parts of the interface are still German while the English localization is in progress.
+GameSeek is free, runs in the browser and on Windows, and is built for a squad: chat, voice, and screen sharing. Open [gameseekapp.com](https://gameseekapp.com) and follow the four steps below.
+
+Early access is open. Chat, voice, and servers work today. Parts of the interface are still German while the English localization is in progress. You do not need to wait for that.
 
 ## 1. Open GameSeek
 
@@ -41,7 +43,9 @@ Server owners can manage channels, roles, members, security, and a danger zone (
 
 ## What to expect right now
 
-GameSeek is built and maintained by a small team, and much of it by one developer. Features land as they are ready. The [roadmap](roadmap.md) lists the current focus, and the [changelog](../CHANGELOG.md) lists what already shipped.
+You are early, which is the point. A small team ships GameSeek, and a lot of it is still one developer. Your feedback changes the order of the [roadmap](roadmap.md). The [changelog](../CHANGELOG.md) is what already landed.
+
+When something feels off, tell us. That is how the next version gets better.
 
 ## Get help
 

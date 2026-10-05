@@ -1,17 +1,10 @@
 # Features
 
-What GameSeek includes today. The screenshots show the desktop app. Labels in these captures are German. English localization is on the [roadmap](roadmap.md).
-
-## Messaging
-
-- Real-time text chat over WebSocket
-- Edit and delete from the message context menu
-- Edits and deletes broadcast live to everyone in the channel
-- The view follows the latest message
-
-![Text channel, channel list, and member sidebar](../assets/screenshots/text-channel.png)
+Everything you can do in GameSeek today. Open [gameseekapp.com](https://gameseekapp.com) and try it with your group. The shots below are the desktop app. Labels are still German. English localization is on the [roadmap](roadmap.md).
 
 ## Voice and screen sharing
+
+This is the part you leave open while you play.
 
 - Voice channels with peer-to-peer WebRTC audio
 - Background noise suppression
@@ -23,21 +16,11 @@ What GameSeek includes today. The screenshots show the desktop app. Labels in th
 | --- | --- |
 | ![Voice channel](../assets/screenshots/voice-channel.png) | ![Screen share inside a voice channel](../assets/screenshots/screen-share.png) |
 
-## Friends and profiles
+## Your server
 
-- Friend requests, and lists for online, all, pending, and blocked
-- Display name, username, bio, pronouns, and profile picture
-- Status: online, idle, do not disturb, offline
+A server is the home for your group. Spin one up, pick a vibe, then grow it.
 
-| Friends | Profile |
-| --- | --- |
-| ![Friends list](../assets/screenshots/friends.png) | ![User settings profile page](../assets/screenshots/user-settings.png) |
-
-![Edit profile dialog](../assets/screenshots/edit-profile.png)
-
-## Servers
-
-- Create a server and choose a template
+- Create a server and choose a template: Gaming, Friends, Creative, or School
 - Text channels, voice channels, and categories
 - Roles and permissions
 - Member management, including ban and kick with a reason
@@ -50,6 +33,25 @@ What GameSeek includes today. The screenshots show the desktop app. Labels in th
 | ![Create a server](../assets/screenshots/create-server.png) | ![Choose a server template](../assets/screenshots/server-template.png) |
 
 ![Server overview settings](../assets/screenshots/server-settings.png)
+
+## Messaging
+
+- Real-time text chat over WebSocket
+- Edit and delete from the message context menu
+- Edits and deletes broadcast live to everyone in the channel
+- The view follows the latest message
+
+## Friends and profiles
+
+Find people by username, send a request, and show up the way you want.
+
+- Friend requests, and lists for online, all, pending, and blocked
+- Display name, username, bio, pronouns, and profile picture
+- Status: online, idle, do not disturb, offline
+
+| Profile | Edit |
+| --- | --- |
+| ![User settings profile page](../assets/screenshots/user-settings.png) | ![Edit profile dialog](../assets/screenshots/edit-profile.png) |
 
 ## Desktop and web
 
@@ -78,4 +80,6 @@ The client detects Electron at runtime and picks the matching connection.
 
 ## Where this is going
 
-See the [roadmap](roadmap.md) and the [changelog](../CHANGELOG.md).
+The [roadmap](roadmap.md) is what comes next. The [changelog](../CHANGELOG.md) is what already shipped.
+
+Ready to try it? [Open GameSeek](https://gameseekapp.com).

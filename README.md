@@ -1,115 +1,89 @@
 <p align="center">
-  <img src="brand/app-icon.png" alt="GameSeek app icon" width="96">
+  <img src="brand/app-icon.png" alt="GameSeek app icon" width="120">
 </p>
 
-<h1 align="center">GameSeek</h1>
+<h1 align="center">Your squad. One app.</h1>
 
 <p align="center">
-  A free, open communication platform for gamers.<br>
-  Chat, voice, and screen sharing, built to stay lightweight.
+  <strong>GameSeek</strong> is a free, open alternative to Discord.<br>
+  Chat, voice, and screen sharing. Light enough to leave open while you play.
 </p>
 
 <p align="center">
-  <a href="https://gameseekapp.com"><img alt="Website" src="https://img.shields.io/badge/Website-gameseekapp.com-2563eb?style=flat-square"></a>
-  <a href="https://gameseekapp.com"><img alt="Platforms" src="https://img.shields.io/badge/Platforms-Web%20%7C%20Windows-16a34a?style=flat-square"></a>
-  <a href="docs/roadmap.md"><img alt="Status" src="https://img.shields.io/badge/Status-Active%20development-ea580c?style=flat-square"></a>
-  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/License-MIT-111827?style=flat-square"></a>
+  <a href="https://gameseekapp.com"><img alt="Open GameSeek" src="https://img.shields.io/badge/Open%20GameSeek-Try%20it%20free-2563eb?style=for-the-badge"></a>
+  &nbsp;
+  <a href="docs/team.md"><img alt="Join the team" src="https://img.shields.io/badge/Join%20the%20team-Open%20roles-111827?style=for-the-badge"></a>
 </p>
 
-This repository is the public home of GameSeek: what the product is, how it looks, how it is built, and how to take part. The app itself runs at [gameseekapp.com](https://gameseekapp.com).
+<p align="center">
+  <a href="https://gameseekapp.com">Web and Windows</a>
+  &nbsp;·&nbsp;
+  <a href="docs/getting-started.md">Get in within a minute</a>
+  &nbsp;·&nbsp;
+  <a href="https://www.tiktok.com/@gameseekoffizel">TikTok</a>
+</p>
 
-## New here?
+<p align="center">
+  <img src="assets/screenshots/screen-share.png" alt="A voice channel with a live screen share" width="860">
+  <br>
+  <em>Stay in the call and put the match on screen.</em>
+</p>
 
-1. Open [gameseekapp.com](https://gameseekapp.com).
-2. Create an account. Registration uses a 6-digit email code.
-3. Join a server with an invite, or create your own.
+## Made for the people you play with
 
-The full walkthrough is in [Getting started](docs/getting-started.md). The interface in the screenshots below is still German. An English localization of the app is in progress.
+| Talk | Hang out | Make it yours |
+| --- | --- | --- |
+| Text channels for the plan, voice for the round. | Friends, profiles, and a server that feels like your group. | Roles, invites, and moderation when the server grows. |
+| ![Voice channel](assets/screenshots/voice-channel.png) | ![Choose a server template](assets/screenshots/server-template.png) | ![Server settings](assets/screenshots/server-settings.png) |
 
-## Preview
+The app in these shots is still in German. English is in progress, and you can use it today.
 
-| Text channel | Voice channel |
-| --- | --- |
-| ![Text channel with member list](assets/screenshots/text-channel.png) | ![Voice channel with one connected user](assets/screenshots/voice-channel.png) |
+## Try it before you overthink it
 
-| Screen sharing | Friends |
-| --- | --- |
-| ![Voice channel with a shared screen](assets/screenshots/screen-share.png) | ![Friends list](assets/screenshots/friends.png) |
+1. Open [gameseekapp.com](https://gameseekapp.com). Browser or Windows app, same place.
+2. Confirm your email with a 6-digit code.
+3. Create a server, or join one with an invite. Bring two friends. That is a squad.
 
-More screens are in [Features](docs/features.md).
+Early access is open. The core is here: chat, voice, screen sharing, servers, friends. What ships next can still be shaped by the people using it.
 
-## Why people try it
+[Get started](docs/getting-started.md) · [See every feature](docs/features.md) · [Send feedback](https://gameseekapp.com/support/index.html)
+
+## Why people stay
+
+- **It gets out of the way.** A dark, quiet layout. The call and the chat are the product.
+- **Your server, your rules.** Channels, categories, roles, and kick or ban with a reason.
+- **Free to start.** No paywall to talk to your group.
+- **Built in the open.** The plan, the changelog, and the work are public. You can read them, or join in.
 
 | | GameSeek | Discord |
 | --- | --- | --- |
-| Free | Yes | Yes |
+| Free for your squad | Yes | Yes |
 | Voice and screen sharing | Yes | Yes |
-| Open development | Yes | No |
-| Built to stay lightweight | Yes | No |
+| You can watch it being built | Yes | No |
+| Built to stay light | Yes | No |
 
-## What you can do
+## What is coming
 
-- Real-time text chat, including edit and delete
-- Voice channels with noise suppression and a speaking indicator
-- Screen sharing in a multi-stream layout
-- Servers, channel categories, roles, and permissions
-- Ban and kick tools for server moderators
-- Friends, profiles, and desktop notifications
-- Web app and a native Windows app
+English across the app, matchmaking, custom invite links, then mobile, video calls, bots, and direct messages.
 
-## Download
+The living list is the [roadmap](docs/roadmap.md). What already shipped is the [changelog](CHANGELOG.md).
 
-| Platform | Where |
-| --- | --- |
-| Web | [gameseekapp.com](https://gameseekapp.com) |
-| Windows | [gameseekapp.com](https://gameseekapp.com) |
+## Come build it
 
-GameSeek is in early access. Expect rough edges, and send feedback through [support](https://gameseekapp.com/support/index.html).
+GameSeek is early and small. That is the good part: a design, a bug report, or a weekend of code still changes the product.
 
-## Documentation
+[Open roles](docs/team.md) · jobs@gameseekapp.com · [Community rules](CODE_OF_CONDUCT.md)
+
+If GameSeek is useful to you, a star on this repo helps the next person find it.
+
+## For builders
 
 | | |
 | --- | --- |
-| **Start** | [Getting started](docs/getting-started.md) · [Features](docs/features.md) · [Roadmap](docs/roadmap.md) · [Changelog](CHANGELOG.md) |
-| **Project** | [About](docs/about.md) · [How it is built](docs/build.md) · [Brand](docs/brand.md) · [Team](docs/team.md) |
-| **Technical** | [Architecture](docs/architecture.md) · [API](docs/api.md) · [Deployment](docs/deployment.md) · [Changelog guide](docs/changelog-guide.md) |
-| **Trust** | [Security](SECURITY.md) · [Community rules](CODE_OF_CONDUCT.md) · [Contributing](CONTRIBUTING.md) · [Legal notice](docs/legal/impressum.md) |
+| Stack | Electron · React · TypeScript · Python · WebRTC · SQLite |
+| Read | [Architecture](docs/architecture.md) · [API](docs/api.md) · [Deployment](docs/deployment.md) · [How it is built](docs/build.md) |
+| Project | [About](docs/about.md) · [Brand](docs/brand.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Legal notice](docs/legal/impressum.md) |
 
-The full index is [docs/README.md](docs/README.md).
+Everything in one list: [documentation index](docs/README.md).
 
-## Tech stack
-
-| Layer | Technology |
-| --- | --- |
-| Desktop | Electron |
-| App frontend | React, TypeScript |
-| Website | HTML, CSS, JavaScript |
-| Backend | Python (WebSockets and HTTP) |
-| Real-time media | WebRTC |
-| Database | SQLite |
-| Hosting | Debian, Nginx, Let's Encrypt |
-
-Details are in [Architecture](docs/architecture.md) and [How it is built](docs/build.md).
-
-## On the roadmap
-
-- English localization of the app
-- Website login and API integration
-- Matchmaking
-- Custom invite links
-- Mobile apps, video calls, bots, and direct messages
-
-See the [roadmap](docs/roadmap.md) for what is done, in progress, and planned.
-
-## Community
-
-- Website: [gameseekapp.com](https://gameseekapp.com)
-- Support: [support form](https://gameseekapp.com/support/index.html) · support@gameseekapp.com
-- TikTok: [@gameseekoffizel](https://www.tiktok.com/@gameseekoffizel)
-- Join the team: [open roles](docs/team.md) · jobs@gameseekapp.com
-
-Please read the [community rules](CODE_OF_CONDUCT.md) before you take part.
-
-## License
-
-GameSeek is released under the [MIT License](LICENSE).
+GameSeek is [MIT licensed](LICENSE).

@@ -1,6 +1,8 @@
 # GameSeek documentation
 
-Public documentation for GameSeek, a communication platform for gamers. If you are new, start with [Getting started](getting-started.md). The product lives at [gameseekapp.com](https://gameseekapp.com).
+New here? Open [gameseekapp.com](https://gameseekapp.com) first, then come back. This folder is the map: how to start, what the product does, and how it is built.
+
+The short path for a new player is [Getting started](getting-started.md).
 
 ## Start here
 

@@ -1,6 +1,6 @@
 # Join the team
 
-GameSeek is a small project building a simple platform for gamers. There is room for people who lead, code, design, test, or look after the community.
+GameSeek is early, small, and already in people's hands. If you want your work to show up in an app gamers actually open, there is a seat here. Lead, code, design, test, or look after the community.
 
 ## Why people join
 
